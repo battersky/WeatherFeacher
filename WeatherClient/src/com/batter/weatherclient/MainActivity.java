@@ -51,13 +51,11 @@ public class MainActivity extends Activity {
     protected void onResume () {
         super.onResume();
         Intent intent = new Intent("com.batter.weather.weatherInfo");
-        //intent.setComponent(new ComponentName("com.batter.weather", "com.batter.weather.WeacherService"));
         this.bindService(intent, mConnection, this.BIND_AUTO_CREATE);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
